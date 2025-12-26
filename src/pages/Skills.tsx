@@ -53,26 +53,48 @@ export default function Skills() {
 
                       {usedIn.length > 0 && (
                         <div className="mt-2 flex items-center gap-2">
-                          {usedIn.map((p) => {
-                            const short = (p.title.length > 12) ? p.title.slice(0, 12).trim() + '…' : p.title
+                          {s.name === 'Ubuntu' ? (
+                            <a
+                              href="/portfolio"
+                              title="All projects"
+                              className="inline-flex items-center justify-center px-4 py-1 text-xs font-medium rounded-full text-white bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 shadow-sm hover:shadow-md"
+                            >
+                              All projects
+                            </a>
+                          ) : (
+                            usedIn.map((p) => {
+                              const short = (p.title.length > 12) ? p.title.slice(0, 12).trim() + '…' : p.title
 
-                            return (
-                              <a
-                                key={p.id}
-                                href={p.link}
-                                title={p.title}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="inline-block hover:scale-105 transition-transform"
-                                aria-label={p.title}
-                                style={{ ['--badge-bg' as any]: p.accent, ['--badge-bg-dark' as any]: p.accentDark ?? p.accent }}
-                              >
-                                <span className="inline-flex items-center justify-center px-3 py-1 text-xs font-medium rounded-full shadow-sm hover:shadow-md truncate border border-transparent badge-light">
-                                  {short}
+                              return p.category === 'mobile' ? (
+                                <span
+                                  key={p.id}
+                                  title={p.title}
+                                  aria-label={p.title}
+                                  className="inline-block cursor-default"
+                                  style={{ ['--badge-bg' as any]: p.accent, ['--badge-bg-dark' as any]: p.accentDark ?? p.accent }}
+                                >
+                                  <span className="inline-flex items-center justify-center px-3 py-1 text-xs font-medium rounded-full shadow-sm truncate border border-transparent badge-light">
+                                    {short}
+                                  </span>
                                 </span>
-                              </a>
-                            )
-                          })}
+                              ) : (
+                                <a
+                                  key={p.id}
+                                  href={p.link}
+                                  title={p.title}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="inline-block hover:scale-105 transition-transform"
+                                  aria-label={p.title}
+                                  style={{ ['--badge-bg' as any]: p.accent, ['--badge-bg-dark' as any]: p.accentDark ?? p.accent }}
+                                >
+                                  <span className="inline-flex items-center justify-center px-3 py-1 text-xs font-medium rounded-full shadow-sm hover:shadow-md truncate border border-transparent badge-light">
+                                    {short}
+                                  </span>
+                                </a>
+                              )
+                            })
+                          )}
                         </div>
                       )}
                     </li>

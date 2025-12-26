@@ -18,6 +18,14 @@ export interface Project {
   architectureTitle?: string
   architecture?: string
   aiWorkflow?: string
+  // Project classification (web or mobile) and optional platforms for mobile apps
+  category?: 'web' | 'mobile'
+  platforms?: string[]
+  // Optional store links for mobile apps
+  store?: {
+    android?: string
+    ios?: string
+  }
   // Foundation and AI-specific details
   foundation?: string
   aiAcceleration?: {

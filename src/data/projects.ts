@@ -6,6 +6,7 @@ export const projects: Project[] = [
     title: '52 Weeks of Fun',
     description: 'A community-driven platform designed to inspire active lifestyles through weekly curated activity guides.',
     role: 'Lead Developer (Manual Foundation + AI Evolution)',
+    category: 'web',
     foundation: 'Originally built as a robust Ruby on Rails application, I transitioned this project into a scalable cloud-hosted environment:\n\nCloud Ecosystem: Orchestrated deployment using Amazon AWS services, utilizing EC2 for reliable application hosting and S3 for high-availability media storage.\n\nGeospatial Integration: Integrated Google Maps Platform to provide interactive, location-based activity discovery.\n\nData & Insights: Engineered an internal analytics engine to track user engagement and content performance directly within the PostgreSQL database.',
     apiExpansion: 'I evolved the platform from a standalone website into a centralized backend for a multi-platform experience.\n\nCustom API Development: Developed and exposed a secure RESTful API to serve as the data backbone for the native Android and iOS applications.\n\nOmnichannel Delivery: Ensured seamless data synchronization across web and mobile, maintaining a single source of truth for all community content.',
     keyImprovements: [
@@ -47,6 +48,7 @@ export const projects: Project[] = [
     title: 'South Coast Humane Society',
     description: 'A high-impact nonprofit platform designed to bridge the gap between shelter animals and their forever homes.',
     role: 'Sole Developer (React + 3rd Party API Orchestration)',
+    category: 'web',
     architecture: 'I engineered a seamless data pipeline by integrating specialized third-party services, transforming the site into a live, interactive ecosystem.\n\nShelter Manager API Integration: Developed a robust integration with Animal Shelter Manager (ASM) to pull real-time data for adoptable pets. I utilized the HTTP API to automate the display of animal photos, bios, and health status directly from the shelter\'s internal database.\n\nSecure Donation Processing: Integrated the PayPal Donate SDK to handle high-security financial transactions. This allowed the organization to accept one-time and recurring donations safely while minimizing the PCI-compliance burden on the local server.',
     aiWorkflow: 'Component Prototyping: Used Google Gemini to rapidly draft modular React components for the adoption gallery, allowing me to focus on the complex logic of asynchronous API data fetching.',
     oversight: 'While AI assisted with UI structures, I manually directed the error handling and state management. This was critical for ensuring the ASM API gracefully handled "no data" states and that PayPal redirects were secure and verified.',
@@ -76,18 +78,51 @@ export const projects: Project[] = [
     role: 'Front-End Developer (React / Bootstrap / Vite)',
     architectureTitle: 'The Educational Service Hub',
     architecture: 'I engineered this microsite to serve as a professional gateway for California families seeking specialized homeschooling. By leveraging React and Vite, I built a high-performance platform that translates complex state educational requirements into a clear, user-friendly experience. The site prioritizes accessibility and trust, ensuring that families can easily connect with a credentialed teacher while navigating their homeschooling options.',
+    category: 'web',
     tech: [
       'React',
       'Bootstrap',
       'JavaScript',
       'HTML',
       'CSS',
-      'Vite'
+      'Vite',
+      'Ubuntu'
     ],
     // Visual accent for badges (light / dark)
     accent: '#0EA5A4',
     accentDark: '#0D9488',
     link: 'https://jen.52weeksoffun.net',
     screenshot: '/assets/jen-52weeksoffun.png'
+  },
+  {
+    id: '4',
+    title: '52 Weeks of Fun (Mobile)',
+    description: 'The Cross-Platform Evolution\n\nI extended the "52 Weeks of Fun" ecosystem by developing a dedicated mobile application designed to put activity planning directly into the user\'s pocket. Originally launched as a manually coded foundation, I have now integrated AI-driven workflows to streamline development, allowing for faster feature iteration and more efficient bug resolution.',
+    role: 'Mobile Developer (Unity / C#)',
+    category: 'mobile',
+    platforms: ['Android', 'iOS (coming soon)'],
+    store: {
+      android: 'https://play.google.com/store/apps/details?id=com.FiftyTwoWeeksofFun.All'
+    },
+    foundation: 'Unity & C# Integration: Developed a robust communication layer in C# to fetch real-time activity data and curated guides from the 52 Weeks of Fun API.',
+    architecture: 'Asynchronous API Architecture: Implemented asynchronous programming to handle API calls, ensuring the UI remains responsive while the app fetches data in the background.\n\nStreamlined Development: Transitioned from purely manual coding to an AI-augmented workflow, utilizing modern tools to architect complex Unity components and optimize the cross-platform codebase.\n\nMobile-First Experience: Focused on a touch-optimized interface that maintains consistent branding and data synchronization across the entire community ecosystem.',
+    oversight: 'Technical Oversight: As the lead for the mobile expansion, I ensure that all AI-assisted code adheres to strict performance standards and architectural integrity. By leveraging the RESTful API originally built for the web platform, I\'ve established a seamless data pipeline that serves as the "single source of truth" for all mobile users.',
+    keyImprovements: [
+      'Unity & C#: Robust native integration for performant cross-platform features.',
+      'Asynchronous API handling: Responsive UI during background fetches.',
+      'AI-augmented workflow: Faster feature iteration and improved code quality.',
+      'Mobile-first UX: Touch-optimized interface with consistent branding across platforms.'
+    ],
+    tech: [
+      'Unity',
+      'C#',
+      'REST API',
+      'Android',
+      'Git'
+    ],
+    // Visual accent for badges (light / dark)
+    accent: '#F97316',
+    accentDark: '#EA580C',
+    link: '#'
   }
 ]

@@ -22,11 +22,25 @@ export default function ProjectCard({ project }: { project: Project }) {
         <div>
           <h3 className="text-xl font-semibold">{project.title}</h3>
           {project.role && <p className="text-sm text-gray-800 dark:text-gray-100 font-medium mt-1">Role: {project.role}</p>}
+
+          {project.platforms && project.platforms.length > 0 && (
+            <div className="mt-2 flex items-center gap-2">
+              {project.platforms.map((pf) => (
+                <span key={pf} className="text-xs px-2 py-0.5 rounded-full bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-100">{pf}</span>
+              ))}
+            </div>
+          )}
         </div>
 
-        {project.link && (
-          <a href={project.link} className="text-sm text-blue-600 hover:underline ml-4" target="_blank" rel="noopener noreferrer">View project</a>
-        )}
+        <div className="ml-4 flex flex-col items-end gap-2">
+          {project.store?.android && (
+            <a href={project.store.android} className="text-sm inline-flex items-center gap-2 px-2 py-1 bg-green-600 text-white rounded" target="_blank" rel="noopener noreferrer">Google Play</a>
+          )}
+
+          {project.store?.ios && (
+            <a href={project.store.ios} className="text-sm inline-flex items-center gap-2 px-2 py-1 bg-black text-white rounded" target="_blank" rel="noopener noreferrer">App Store</a>
+          )}
+        </div>
       </div>
 
       <div className="relative mt-2">
