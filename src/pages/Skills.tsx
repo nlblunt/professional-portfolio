@@ -12,6 +12,8 @@ const headerClasses: Record<string, { bg: string; text: string }> = {
 }
 
 export default function Skills() {
+  const aggregateSkills = ['Ubuntu', 'Git', 'GitHub', 'WSL (Windows Subsystem for Linux)', 'Google Gemini', 'GitHub Copilot']
+
   return (
     <section>
       <h1 className="text-2xl font-bold mb-6">Skills</h1>
@@ -53,7 +55,7 @@ export default function Skills() {
 
                       {usedIn.length > 0 && (
                         <div className="mt-2 flex items-center gap-2">
-                          {s.name === 'Ubuntu' ? (
+                          {aggregateSkills.includes(s.name) ? (
                             <a
                               href="/portfolio"
                               title="All projects"
