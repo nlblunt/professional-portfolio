@@ -13,6 +13,7 @@ const headerClasses: Record<string, { bg: string; text: string }> = {
 
 export default function Skills() {
   const aggregateSkills = ['Ubuntu', 'Git', 'GitHub', 'WSL (Windows Subsystem for Linux)', 'Google Gemini', 'GitHub Copilot']
+  const [expanded, setExpanded] = useState<Record<string, boolean>>({})
 
   return (
     <section>
