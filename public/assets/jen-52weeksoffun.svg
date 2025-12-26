@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1">
+      <stop offset="0%" stop-color="#0D6EFD"/>
+      <stop offset="100%" stop-color="#1E3A8A"/>
+    </linearGradient>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#g)" />
+  <g fill="#fff" font-family="Inter, Arial, Helvetica, sans-serif">
+    <text x="60" y="160" font-size="48" font-weight="700">jen.52weeksoffun</text>
+    <text x="60" y="220" font-size="20" opacity="0.9">React + Bootstrap • Interactive microsite • Modular components</text>
+    <rect x="60" y="260" width="320" height="200" rx="12" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.08)" />
+    <text x="80" y="320" font-size="14">• Reusable UI components</text>
+    <text x="80" y="350" font-size="14">• Responsive Bootstrap grid</text>
+    <text x="80" y="380" font-size="14">• Small interactive widgets</text>
+  </g>
+</svg>

@@ -1,0 +1,88 @@
+import React from 'react'
+import { skills } from '../data/skills'
+import { projects } from '../data/projects'
+import SkillIcon from '../components/SkillIcon' 
+
+const headerClasses: Record<string, { bg: string; text: string }> = {
+  'Languages': { bg: 'bg-blue-50 border-b border-blue-200', text: 'text-blue-800' },
+  'Frameworks & Libraries': { bg: 'bg-green-50 border-b border-green-200', text: 'text-green-800' },
+  'Tools & Platforms': { bg: 'bg-purple-50 border-b border-purple-200', text: 'text-purple-800' },
+  'Databases': { bg: 'bg-amber-50 border-b border-amber-200', text: 'text-amber-800' },
+  'AI & LLM Workflows': { bg: 'bg-indigo-50 border-b border-indigo-200', text: 'text-indigo-800' }
+}
+
+export default function Skills() {
+  return (
+    <section>
+      <h1 className="text-2xl font-bold mb-6">Skills</h1>
+
+      <div className="grid gap-6 md:grid-cols-2">
+        {skills.map((c) => (
+          <div key={c.category} className="bg-white dark:bg-gray-800 dark:text-gray-100 rounded-md shadow-sm overflow-hidden border border-transparent dark:border-gray-700">
+            <div className={`${headerClasses[c.category]?.bg ?? 'bg-gray-50 border-b'} dark:bg-gray-700 dark:border-b dark:border-gray-700 px-5 py-3`}>
+              <h3 className={`text-lg font-semibold m-0 ${headerClasses[c.category]?.text ?? 'text-gray-900'} dark:text-gray-100`}>
+                {c.category}
+              </h3>
+            </div>
+
+            <div className="p-6">
+              <ul className="space-y-4">
+                {c.items.map((s) => {
+                  const usedIn = projects.filter((p) => p.tech?.includes(s.name))
+
+                  return (
+                    <li key={s.name} className="flex flex-col items-start gap-3 transition transform hover:-translate-y-1 hover:shadow-lg hover:bg-gray-50 dark:hover:bg-gray-700 rounded-md p-3">
+                      <div className="flex items-start gap-4 w-full">
+                        <div className="flex-shrink-0">
+                          <SkillIcon name={s.name} className="rounded-full" />
+                        </div>
+                        <div>
+                          <a
+                            href={s.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-sm text-gray-900 dark:text-gray-100 font-medium hover:underline"
+                          >
+                            {s.name}
+                          </a>
+                          {s.description && (
+                            <div className="text-sm text-gray-800 dark:text-gray-100 mt-1 max-w-xl">{s.description}</div>
+                          )}
+                        </div>
+                      </div>
+
+                      {usedIn.length > 0 && (
+                        <div className="mt-2 flex items-center gap-2">
+                          {usedIn.map((p) => {
+                            const short = (p.title.length > 12) ? p.title.slice(0, 12).trim() + '…' : p.title
+
+                            return (
+                              <a
+                                key={p.id}
+                                href={p.link}
+                                title={p.title}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-block hover:scale-105 transition-transform"
+                                aria-label={p.title}
+                                style={{ ['--badge-bg' as any]: p.accent, ['--badge-bg-dark' as any]: p.accentDark ?? p.accent }}
+                              >
+                                <span className="inline-flex items-center justify-center px-3 py-1 text-xs font-medium rounded-full shadow-sm hover:shadow-md truncate border border-transparent badge-light">
+                                  {short}
+                                </span>
+                              </a>
+                            )
+                          })}
+                        </div>
+                      )}
+                    </li>
+                  )
+                })}
+              </ul>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  )
+}
