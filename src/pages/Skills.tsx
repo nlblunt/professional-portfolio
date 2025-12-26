@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { skills } from '../data/skills'
 import { projects } from '../data/projects'
 import SkillIcon from '../components/SkillIcon' 
@@ -64,38 +64,50 @@ export default function Skills() {
                               All projects
                             </a>
                           ) : (
-                            usedIn.map((p) => {
-                              const short = (p.title.length > 12) ? p.title.slice(0, 12).trim() + '…' : p.title
+                            <>
+                              {((expanded[s.name]) ? usedIn : usedIn.slice(0, 3)).map((p) => {
+                                const short = (p.title.length > 12) ? p.title.slice(0, 12).trim() + '…' : p.title
 
-                              return p.category === 'mobile' ? (
-                                <span
-                                  key={p.id}
-                                  title={p.title}
-                                  aria-label={p.title}
-                                  className="inline-block cursor-default"
-                                  style={{ ['--badge-bg' as any]: p.accent, ['--badge-bg-dark' as any]: p.accentDark ?? p.accent }}
-                                >
-                                  <span className="inline-flex items-center justify-center px-3 py-1 text-xs font-medium rounded-full shadow-sm truncate border border-transparent badge-light">
-                                    {short}
+                                return p.category === 'mobile' ? (
+                                  <span
+                                    key={p.id}
+                                    title={p.title}
+                                    aria-label={p.title}
+                                    className="inline-block cursor-default"
+                                    style={{ ['--badge-bg' as any]: p.accent, ['--badge-bg-dark' as any]: p.accentDark ?? p.accent }}
+                                  >
+                                    <span className="inline-flex items-center justify-center px-3 py-1 text-xs font-medium rounded-full shadow-sm truncate border border-transparent badge-light">
+                                      {short}
+                                    </span>
                                   </span>
-                                </span>
-                              ) : (
-                                <a
-                                  key={p.id}
-                                  href={p.link}
-                                  title={p.title}
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                  className="inline-block hover:scale-105 transition-transform"
-                                  aria-label={p.title}
-                                  style={{ ['--badge-bg' as any]: p.accent, ['--badge-bg-dark' as any]: p.accentDark ?? p.accent }}
+                                ) : (
+                                  <a
+                                    key={p.id}
+                                    href={p.link}
+                                    title={p.title}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="inline-block hover:scale-105 transition-transform"
+                                    aria-label={p.title}
+                                    style={{ ['--badge-bg' as any]: p.accent, ['--badge-bg-dark' as any]: p.accentDark ?? p.accent }}
+                                  >
+                                    <span className="inline-flex items-center justify-center px-3 py-1 text-xs font-medium rounded-full shadow-sm hover:shadow-md truncate border border-transparent badge-light">
+                                      {short}
+                                    </span>
+                                  </a>
+                                )
+                              })}
+
+                              {usedIn.length > 3 && (
+                                <button
+                                  onClick={() => setExpanded((prev) => ({ ...prev, [s.name]: !prev[s.name] }))}
+                                  className="text-sm text-blue-600 hover:underline ml-2"
+                                  aria-expanded={!!expanded[s.name]}
                                 >
-                                  <span className="inline-flex items-center justify-center px-3 py-1 text-xs font-medium rounded-full shadow-sm hover:shadow-md truncate border border-transparent badge-light">
-                                    {short}
-                                  </span>
-                                </a>
-                              )
-                            })
+                                  {expanded[s.name] ? 'Show less' : `Show more (${usedIn.length - 3})`}
+                                </button>
+                              )}
+                            </>
                           )}
                         </div>
                       )}
