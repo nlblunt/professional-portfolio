@@ -1,11 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-
 export default function Home() {
   return (
-    <section className="py-12">
-      <div className="max-w-3xl mx-auto text-center">
-        <h2 className="text-4xl font-extrabold">Full-Stack Developer | Cloud Infrastructure & AI-Augmented Systems</h2>
+    <section className="py-12 relative overflow-hidden">
+      <div className="max-w-3xl mx-auto text-center relative z-10">        <h2 className="text-4xl font-extrabold">Full-Stack Developer | Cloud Infrastructure & AI-Augmented Systems</h2>
 
         <p className="mt-4 text-gray-800 dark:text-gray-100">I build scalable digital ecosystems by bridging foundational engineering with modern, AI-accelerated workflows. With a background in Ruby on Rails and React, I specialize in moving projects from manual foundations to high-velocity, cloud-hosted environments on Amazon AWS (EC2/S3).</p>
 

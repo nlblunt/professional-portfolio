@@ -69,7 +69,7 @@ export const projects: Project[] = [
     accent: '#7C3AED',
     accentDark: '#5B21B6',
     link: 'https://www.southcoasthumanebrookings.org',
-    screenshot: '/assets/southcoast-humane.png' 
+    screenshot: '/assets/southcoast-humane.png'
   },
   {
     id: '3',
@@ -124,5 +124,45 @@ export const projects: Project[] = [
     accent: '#F97316',
     accentDark: '#EA580C',
     link: '#'
+  },
+  {
+    id: '5',
+    title: 'Night City - Time of the Red',
+    description: 'A dedicated campaign management interface for our Cyberpunk Red TTRPG sessions. Acts as a central "Data Fortress" providing real-time access to world lore, corporation databases, and session archives.',
+    role: 'Lead Developer (Jekyll + Obsidian)',
+    category: 'web',
+    tech: [
+      'Jekyll',
+      'Markdown',
+      'Obsidian',
+      'HTML',
+      'CSS',
+      'JavaScript'
+    ],
+    // Visual accent for badges (light / dark)
+    accent: '#DC2626',
+    accentDark: '#B91C1C',
+    link: 'https://cpr.52weeksoffun.net',
+    screenshot: '/assets/cpr-52weeksoffun.png'
+  },
+  {
+    id: '6',
+    title: 'Season of Ghosts',
+    description: 'An interactive companion app for the Season of Ghosts campaign. Features dynamic tracking of quests, character stats, and an ever-evolving compendium of NPCs and location lore.',
+    role: 'Lead Developer (Jekyll + Obsidian)',
+    category: 'web',
+    tech: [
+      'Jekyll',
+      'Markdown',
+      'Obsidian',
+      'HTML',
+      'CSS',
+      'JavaScript'
+    ],
+    // Visual accent for badges (light / dark)
+    accent: '#10B981',
+    accentDark: '#059669',
+    link: 'https://ghosts.52weeksoffun.net',
+    screenshot: '/assets/ghosts-52weeksoffun.png'
   }
 ]

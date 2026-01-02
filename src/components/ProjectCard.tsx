@@ -33,6 +33,10 @@ export default function ProjectCard({ project }: { project: Project }) {
         </div>
 
         <div className="ml-4 flex flex-col items-end gap-2">
+          {project.link && project.link !== '#' && (
+            <a href={project.link} className="text-sm inline-flex items-center gap-2 px-2 py-1 bg-blue-600 text-white rounded hover:bg-blue-700" target="_blank" rel="noopener noreferrer">Visit Site</a>
+          )}
+
           {project.store?.android && (
             <a href={project.store.android} className="text-sm inline-flex items-center gap-2 px-2 py-1 bg-green-600 text-white rounded" target="_blank" rel="noopener noreferrer">Google Play</a>
           )}
@@ -62,14 +66,14 @@ export default function ProjectCard({ project }: { project: Project }) {
               <h4 className="text-sm font-semibold text-gray-800 dark:text-gray-100">API Architecture & Mobile Expansion</h4>
               <div className="text-sm text-gray-800 dark:text-gray-100 mt-1 whitespace-pre-line">{project.apiExpansion}</div>
             </div>
-          )} 
+          )}
 
           {project.directorWorkflow && (
             <div className="mt-3">
               <h4 className="text-sm font-semibold text-gray-800 dark:text-gray-100">The "Director" Workflow</h4>
               <p className="text-sm text-gray-800 dark:text-gray-100 mt-1">{project.directorWorkflow}</p>
             </div>
-          )} 
+          )}
 
           {project.keyImprovements && (
             <div className="mt-3">
@@ -80,35 +84,35 @@ export default function ProjectCard({ project }: { project: Project }) {
                 ))}
               </ul>
             </div>
-          )} 
+          )}
 
           {project.architecture && (
             <div className="mt-3">
               <h4 className="text-sm font-semibold text-gray-800 dark:text-gray-100">{project.architectureTitle ?? 'The API-First Architecture'}</h4>
               <div className="text-sm text-gray-800 dark:text-gray-100 mt-1 whitespace-pre-line">{project.architecture}</div>
             </div>
-          )} 
+          )}
 
           {project.aiWorkflow && (
             <div className="mt-3">
               <h4 className="text-sm font-semibold text-gray-800 dark:text-gray-100">The AI-Augmented Workflow</h4>
               <p className="text-sm text-gray-800 dark:text-gray-100 mt-1">{project.aiWorkflow}</p>
             </div>
-          )} 
+          )}
 
           {project.workflow && (
             <div className="mt-3">
               <h4 className="text-sm font-semibold text-gray-800 dark:text-gray-100">The Workflow</h4>
               <p className="text-sm text-gray-800 dark:text-gray-100 mt-1">{project.workflow}</p>
             </div>
-          )} 
+          )}
 
           {project.oversight && (
             <div className="mt-3">
               <h4 className="text-sm font-semibold text-gray-800 dark:text-gray-100">The Oversight</h4>
               <p className="text-sm text-gray-800 dark:text-gray-100 mt-1">{project.oversight}</p>
             </div>
-          )} 
+          )}
 
           <div className="mt-3 flex flex-wrap gap-2">
             {project.tech.map((t) => (

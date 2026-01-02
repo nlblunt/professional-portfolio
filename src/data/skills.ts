@@ -31,6 +31,11 @@ export const skills = [
         name: 'C++',
         description: 'Performance-oriented systems programming language for high-performance applications and fine-grained control.',
         url: 'https://isocpp.org'
+      },
+      {
+        name: 'Markdown',
+        description: 'Lightweight markup language for creating formatted text using a plain-text editor.',
+        url: 'https://www.markdownguide.org'
       }
     ]
   },
@@ -53,11 +58,6 @@ export const skills = [
     category: 'Frameworks & Libraries',
     items: [
       {
-        name: 'React',
-        description: 'UI library for building interactive user interfaces.',
-        url: 'https://react.dev'
-      },
-      {
         name: 'Ruby on Rails',
         description: 'Full-stack web framework for convention-driven development.',
         url: 'https://rubyonrails.org'
@@ -68,20 +68,40 @@ export const skills = [
         url: 'https://unity.com'
       },
       {
-        name: 'Tailwind CSS',
-        description: 'Utility-first CSS framework for rapid UI development.',
-        url: 'https://tailwindcss.com'
-      },
-      {
         name: 'Bootstrap',
         description: 'Popular CSS framework for responsive components and layout.',
         url: 'https://getbootstrap.com'
+      },
+      {
+        name: 'React',
+        description: 'UI library for building interactive user interfaces.',
+        url: 'https://react.dev'
+      },
+      {
+        name: 'Jekyll',
+        description: 'Simple, blog-aware, static site generator perfect for personal, project, or organization sites.',
+        url: 'https://jekyllrb.com'
+      },
+      {
+        name: 'Tailwind CSS',
+        description: 'Utility-first CSS framework for rapid UI development.',
+        url: 'https://tailwindcss.com'
       }
     ]
   },
   {
     category: 'Tools & Platforms',
     items: [
+      {
+        name: 'Ubuntu',
+        description: 'Popular Linux distribution commonly used for servers and developer environments.',
+        url: 'https://ubuntu.com'
+      },
+      {
+        name: 'WSL (Windows Subsystem for Linux)',
+        description: 'Compatibility layer to run Linux distributions on Windows for development and testing.',
+        url: 'https://learn.microsoft.com/windows/wsl'
+      },
       {
         name: 'Git',
         description: 'Distributed version control system for tracking changes and collaboration.',
@@ -93,19 +113,14 @@ export const skills = [
         url: 'https://github.com'
       },
       {
+        name: 'Obsidian',
+        description: 'Extensible knowledge base that works on top of a local folder of plain text Markdown files.',
+        url: 'https://obsidian.md'
+      },
+      {
         name: 'Bitbucket',
         description: 'Git hosting service with built-in CI/CD and enterprise-friendly features.',
         url: 'https://bitbucket.org'
-      },
-      {
-        name: 'Ubuntu',
-        description: 'Popular Linux distribution commonly used for servers and developer environments.',
-        url: 'https://ubuntu.com'
-      },
-      {
-        name: 'WSL (Windows Subsystem for Linux)',
-        description: 'Compatibility layer to run Linux distributions on Windows for development and testing.',
-        url: 'https://learn.microsoft.com/windows/wsl'
       },
       {
         name: 'Heroku',

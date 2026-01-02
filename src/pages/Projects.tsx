@@ -9,7 +9,7 @@ export default function Projects() {
   const webProjects = projects.filter((p) => p.category === 'web' || !p.category)
   const mobileProjects = projects.filter((p) => p.category === 'mobile')
 
-  const visibleWeb = showAllWeb ? webProjects : webProjects.slice(0, 3)
+  const visibleWeb = showAllWeb ? webProjects : webProjects.slice(0, 6)
   const visibleMobile = showAllMobile ? mobileProjects : mobileProjects.slice(0, 3)
 
   return (
@@ -24,14 +24,14 @@ export default function Projects() {
           ))}
         </div>
 
-        {webProjects.length > 3 && (
+        {webProjects.length > 6 && (
           <div className="mt-4 flex justify-center">
             <button
               onClick={() => setShowAllWeb((s) => !s)}
               className="text-sm text-blue-600 hover:underline"
               aria-expanded={showAllWeb}
             >
-              {showAllWeb ? 'Show less' : `Show more (${webProjects.length - 3})`}
+              {showAllWeb ? 'Show less' : `Show more (${webProjects.length - 6})`}
             </button>
           </div>
         )}
